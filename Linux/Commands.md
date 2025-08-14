@@ -2,11 +2,11 @@
 
 ```bash
 # File/Directory Information
-du -h file.txt      # Check txt file size
-du -sh folder       # Check folder size
-ls -l file.txt      # Check file properties
-ls -ld folder       # Check folder properties
-ls -a foldername    # List all files includig hidden files
+du -lh file.txt      # file size - l for long listing/foramt and h for human readable
+du -sh java(folder_name)       # folder size --- s for summary
+ls -l file.txt      # file properties
+ls -ld folder       # folder properties
+ls -a java(folder)      # List all files includig hidden files
 
 # File Operations
 rm *.ext            # Remove all files with specific extension
