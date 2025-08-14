@@ -1,17 +1,19 @@
 # Termux
 
-**Open Root File Manager and navigate to `/data/data/com.termux/files/home/` and copy the .termux folder to take termux backup.**
-**Similarly, open .config folder and copy important folders to take backup. Save backup folders in OneDrive to access from any device**
+**Open Solid Explorer and navigate to `/data/data/com.termux/files/home/` the copy the .termux folder to take termux backup.**
+**Similarly, copy .config folder to take fish shell backup. Save backup folders in OneDrive to access from any device**
+
+**Navigate to termux root data folders and allow write permission to copied backup files from attributes in solid explorer.**
 
 ## Basic to-dos
 
 ```bash
-termux-change-repo > Mirror group > All mirror/asia mirrors
+termux-change-repo > asia
 termux-setup-storage
 pkg update -y   and   pkg upgrade -y
 
-pkg install fish -y
-chsh -s fish
+# Install all packages first
+chsh -s fish # fish as default shell 
 
 cd /  # root storage 
 cd /sdcard/  # main storage
@@ -100,3 +102,4 @@ alias sf 'source ~/.config/fish/config.fish'
 alias ip "ifconfig 2>/dev/null | awk '/inet / && \$2 !~ /127.0.0.1/ {i>
 alias fish="cd ~/.config/fish/"
 ```
+
