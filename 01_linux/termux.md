@@ -102,4 +102,5 @@ alias sf 'source ~/.config/fish/config.fish'
 alias ip "ifconfig 2>/dev/null | awk '/inet / && \$2 !~ /127.0.0.1/ {i>
 alias fish="cd ~/.config/fish/"
 ```
-
+## Fish Prompt
+- `fish_config`: prompt tab > Informative Vcs (~ [1]$)
