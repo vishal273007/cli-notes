@@ -82,7 +82,7 @@ color14=#A4FFFF
 color15=#FFFFFF
 ```
 
-## Fish Config File
+## Fish Config for Alias and Environment Variables
 
 ```bash
 if status is-interactive
@@ -101,6 +101,10 @@ alias sf 'source ~/.config/fish/config.fish'
 
 alias ip "ifconfig 2>/dev/null | awk '/inet / && \$2 !~ /127.0.0.1/ {i>
 alias fish="cd ~/.config/fish/"
+
+# ADB/Fastboot alias for MMRL Module Repo
+alias adb='su -c adb'
+alias fastboot='su -c fastboot'
 ```
 ## Fish Prompt
 - `fish_config`: prompt tab > Informative Vcs (~ [1]$)
