@@ -5,6 +5,10 @@
 
 **Navigate to termux root data folders and allow write permission to copied backup files from attributes in solid explorer.**
 
+### Keep Termux Running in Background
+- About App > Battery > Enable Run in Background.
+- Recent > Lock in Recent.
+
 ## Basic to-dos
 
 ```bash
