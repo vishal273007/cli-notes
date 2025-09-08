@@ -75,3 +75,36 @@ ssh-keygen -f ~/.ssh/known_hosts -R '[ip(192.168.0.142)]:8022'
 
 Then first login to ssh with password and then use alias.
 ```
+
+### Copy files using SSH
+```bash
+scp -P 8022 u0_a583@192.168.1.3:/sdcard/Download/KSU.tar.gz "/mnt/c/Users/Vishal Vishwakarma/Desktop"
+```
+**Explanation**
+- scp = secure copy
+- -P 8022 = ssh port
+- u0_a583@IP_Address - Termux SSH user and ip
+- /sdcard/Download/KSU.tar.gz = file on the remote source device
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+fff
