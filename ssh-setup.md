@@ -88,6 +88,25 @@ scp -P 8022 u0_a583@192.168.1.3:/sdcard/Download/KSU.tar.gz "/mnt/c/Users/Vishal
 
 
 
+### SFTP in Termux
+
+sftp -P 8022 u0_a583@192.168.1.11
+
+- `lcd "/mnt/d/downloads"`: Change local path in PC
+- `cd /sdcard`: Change path in connected remote phone
+
+*get file.txt* = Copy to PC path from Phone
+*put file.txt* = Copy to Phone from the PC
+
+- `ls`: check the copied file in the current path in phone
+
+- `Ctrl + L / ! clear`: clear
+
+*lcd* = local change directory [change folder path in PC]
+*cd* = change foler path in connected ssh device.
+
+
+		
 
 
 
@@ -98,13 +117,3 @@ scp -P 8022 u0_a583@192.168.1.3:/sdcard/Download/KSU.tar.gz "/mnt/c/Users/Vishal
 
 
 
-
-
-
-
-
-
-
-
-
-fff
