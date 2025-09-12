@@ -106,10 +106,49 @@ sftp -P 8022 u0_a583@192.168.1.11
 *cd* = change foler path in connected ssh device.
 
 
-		
+##SFTP Usage (On Remote Device)**
+
+### 📂 Folder management
+mkdir NewFolder              # create a new folder on phone
+rmdir OldFolder              # remove an empty folder on phone
+
+### 📄 File upload (PC → phone)
+put file.txt                 # upload one file to current remote dir
+put * /sdcard/TargetFolder/  # upload all files from local dir to phone folder
+put -r MyFolder              # upload a whole folder recursively
+
+### 📄 File download (phone → PC)
+get file.txt                 # download one file from phone
+get * "/mnt/d/downloads"     # download all files in current remote dir to local folder
+get -r PhoneFolder           # download a whole folder recursively
+
+### ✏️ Rename / Move on phone
+rename oldname.txt newname.txt   # rename or move a file/folder
+
+### ❌ Delete on phone
+rm unwanted.txt               # delete a file
+rmdir EmptyFolder             # delete an empty folder
+
+# 📜 Navigation & listing on phone
+cd /sdcard/DCIM              # change remote directory
+ls                           # list files in current remote dir
 
 
 
+## SFTP Usage (For Local Device)
+
+# 📂 Folder management (local PC)
+! mkdir LocalFolder              # create a new folder on PC
+! rmdir LocalFolder              # remove a folder on PC (must be empty)
+
+# 📄 File operations (local PC)
+! rm file.txt                    # delete a file on PC
+! mv oldname.txt newname.txt     # rename or move a file on PC
+
+# 📜 Navigation & listing (local PC)
+lcd /mnt/c/Users/Vishal\ Vishwakarma/Desktop   # change local dir (WSL path)
+lcd "C:\Users\Vishal Vishwakarma\Desktop"      # change local dir (Windows PowerShell path)
+lls                                            # list files in current local dir
 
 
 
