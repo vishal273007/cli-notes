@@ -21,10 +21,6 @@ chsh -s fish # fish as default shell
 
 cd /  # root storage 
 cd /sdcard/  # main storage
-
-
-which <pkg name> # show pkg path
-pkg show <PKG name> # details about a package
 ```
 
 ___
@@ -35,6 +31,8 @@ ___
 pkg install python git nodejs openssh busybox curl wget openjdk-17 which fish eza bat tree -y # alias cat = bat
 
 which busybox fish # verify installation with path
+
+Use 3C Toolbox Task Manager to see how much sshd and busybox ftp with Termux is consuming CPU.
 ```
 
 
