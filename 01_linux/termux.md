@@ -32,9 +32,11 @@ ___
 ### Packages
 
 ```bash
-pkg install python git nodejs openssh busybox curl wget openjdk-17 which fish -y # alias cat = bat
+pkg install python git nodejs openssh busybox curl wget openjdk-17 which fish eza bat tree -y # alias cat = bat
+
 which busybox fish # verify installation with path
 ```
+
 
 ```bash
 - termux-reload-settings # load the changes
