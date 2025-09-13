@@ -94,6 +94,8 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+termux-wake-lock # run command while screen off
+
 sshd
 pgrep -f "tcpsvd.*9999" >/dev/null || busybox tcpsvd -vE 0.0.0.0 9999 busybox ftpd -w /sdcard &  # & - run in background (for any foreground tasks)
 
