@@ -32,7 +32,8 @@ ___
 ### Packages
 
 ```bash
-pkg install python git nodejs openssh curl wget openjdk-17 which fish -y # alias cat = bat
+pkg install python git nodejs openssh busybox curl wget openjdk-17 which fish -y # alias cat = bat
+which busybox fish # verify installation with path
 ```
 
 ```bash
@@ -94,6 +95,7 @@ if status is-interactive
 end
 
 sshd
+pgrep -f "tcpsvd.*9999" >/dev/null || busybox tcpsvd -vE 0.0.0.0 9999 busybox ftpd -w /sdcard &  # & - run in background (for any foreground tasks)
 
 alias c='clear'
 alias cl='clear'
@@ -109,6 +111,22 @@ alias fish="cd ~/.config/fish/"
 # ADB/Fastboot alias for MMRL Module Repo
 alias adb='su -c adb'
 alias fastboot='su -c fastboot'
+
+
+# eza - replacement of ls
+function ls --wraps eza
+    eza --icons --ignore-glob="snap|*.class" $argv
+end
+
+alias ll="eza -l --icons"          # Long format with icons.
+alias la="eza -la --icons"         # List all files (including hidden) with icons.
+alias lt="eza --tree --icons"      # Display files in a tree structure with icons.
+alias l.="eza -d .* --icons"       # List hidden directories with icons.
+
+# bat (cat) and eza/exa (ls - Enhanced File Listings with icons)
+alias cat='batcat'              # Use bat as a replacement for cat
+
 ```
+
 ## Fish Prompt
 - `fish_config`: prompt tab > Informative Vcs (~ [1]$)
