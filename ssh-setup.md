@@ -13,7 +13,7 @@
 
 ## SSH Server setup in Termux
 
- 1. `passwd`: _Set password `sshpass`_ # Keep the password same for all devices as IP is already unique
+ 1. `passwd`: _Set password `ssh@pass`_ # Keep the password same for all devices as IP is already unique
  2. `sshd`: _Start_
  3. `ps aux | grep sshd`: _Verify_
  4. `config file` ==> add `sshd` to autostart.
