@@ -7,19 +7,19 @@
 ## Essential Packages
 
 ```bash
-# Core Development Tools
-sudo apt install -y \
-    git python openjdk-17 nodejs \
-    openssh sshpass neovim wget curl
+# Core development tools
+sudo apt install -y build-essential git python3 python3-pip \
+    openjdk-17-jdk nodejs npm sshpass neovim wget curl
 
-# Enhanced Shell Tools
-sudo apt install -y \
-    fish tmux eza bat fzf tree tldr neofetch colordiff
+# Install OpenSSH client (default installed already), and server if needed
+sudo apt install -y openssh-client
+# sudo apt install -y openssh-server  # uncomment if you want SSH server inside WSL
 
-# Development & System Tools
-sudo apt install -y \
-    pip pipx snapd build-essential \
-    make net-tools unzip adb fastboot platform-tools
+# Enhanced shell tools
+sudo apt install -y fish tmux tree colordiff bat eza tldr
+
+# Optional Python utilities
+sudo apt install -y pipx snapd
 ```
 
 ### Package Installation Notes
