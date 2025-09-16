@@ -62,7 +62,7 @@
     - Terminal > Settings > Profile Name: Ubuntu
     - Left-side Profiles > Ubuntu.
     - Command line: wsl.exe [Right-click: Opens in current folder]
-    -Starting directory: \\wsl$\Ubuntu\home\ubuntu [Search to launch in home]
+    - Starting directory: \\wsl$\Ubuntu\home\ubuntu [Search to launch in home]
 
     
 - Font face: FiraCode Nerd Font
@@ -96,4 +96,5 @@ winget upgrade --all (similar to `apt upgrade -y`)
 _Reset Terminal:_
 
 - `Installed apps` > Search `terminal` > `Advance options` > `Reset`.
+
 
