@@ -14,21 +14,30 @@ sudo apt install fish -y
 chsh -s $(which fish)
 ```
 
-### Oh My Posh Setup
+## Oh My Posh Setup
 
 ```bash
-# Install Oh My Posh
-curl -s https://ohmyposh.dev/install.sh | bash
+# 1. Create local bin and install Oh My Posh there
+mkdir -p ~/.local/bin
+curl -s https://ohmyposh.dev/install.sh | bash -s -- -d ~/.local/bin
 
-# Setup Agnoster theme
+# 2. Add Oh My Posh to PATH (add this line to config.fish)
+set -gx PATH "$HOME/.local/bin" $PATH
 
-wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/agnoster.omp.json -O ~/agnoster.omp.json
+# 3. Copy Agnoster themes to .poshthemes
+mkdir -p ~/.poshthemes
+cp agnoster.omp.json agnosterplus.omp.json ~/.poshthemes/
 
-# Add to Fish config
-fish_add_path ~/.local/bin
-eval "$(~/.local/bin/oh-my-posh init fish --config ~/agnoster.omp.json)"
+# 4. Initialize Oh My Posh with Agnoster theme (add this below PATH line in config.fish)
+oh-my-posh init fish --config ~/.poshthemes/agnoster.omp.json | source
+
+# 5. Restart fish or execute
+exec fish
 ```
 
+> Note: Ensure `agnoster.omp.json` and `agnosterplus.omp.json` are downloaded before copying.
+
+---
 
 ## TMUX Configuration
 
@@ -45,7 +54,7 @@ tmux new-session \; split-window -h \; select-pane -L
 
 Add to `config.fish`:
 
-```bash
+```fish
 if status is-interactive
 and not set -q TMUX
     exec ~/.tmux-start.sh
@@ -54,7 +63,7 @@ end
 
 ### Common TMUX Commands
 
-- `Ctrl + b %` - Vertical split
-- `Ctrl + b →/←` - Navigate panes
-- `Ctrl + b :resize-pane -L 15` - Resize pane
-- Mouse support: `setw -g mouse on` in `.tmux.conf`
+* `Ctrl + b %` - Vertical split
+* `Ctrl + b →/←` - Navigate panes
+* `Ctrl + b :resize-pane -L 15` - Resize pane
+* Mouse support: `setw -g mouse on` in `.tmux.conf`
