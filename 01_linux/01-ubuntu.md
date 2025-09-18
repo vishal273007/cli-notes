@@ -2,30 +2,7 @@
 
 ## Basic To-Dos
 
-- `touch .hushlogin` - Hide home screen message
-
 - `sudo apt update -y` > `sudo apt upgrade -y` > `sudo apt autoremove -y`
-
-### Change ubuntu hostname(computer name)
-
-```bash
-sudo nano /etc/wsl.conf
-# Ensure network section script is added
-[boot]
-systemd=true
-
-[wsl2]
-guiApplications = true
-
-[network]
-hostname = ubuntu
-generateHosts = false
-
-
-# Also replace name in
-sudo nano /etc/hostname
-sudo nano /etc/hosts
-```
 
 ## Essential Packages
 
