@@ -8,7 +8,7 @@
 Core Packages
 ```bash
 sudo apt install -y build-essential git python3 python3-pip \
-sshpass openssh-client neovim wget curl
+sshpass openssh-client unzip neovim wget curl
 ```
 Enhanced Experience
 ```bash
