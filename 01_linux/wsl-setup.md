@@ -43,7 +43,9 @@ wsl.exe
 * **Customize appearance:** Cursor shape: Bar
 
 ---
-`---` means thick <hr> line like above this.
+
+_---_: means thick <hr> line like above this.
+
 
 ## Uninstall WSL Ubuntu
 
