@@ -5,7 +5,7 @@
 ## 1. Remove WSL Ubuntu
 
 Open **PowerShell** as Administrator.
-1. wsl --list
+1. `wsl --list`
 2. `wsl --shutdown` > `wsl --unregister Ubuntu`
 3. Must remove autostartup script from the startup menu.
 
