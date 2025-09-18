@@ -39,6 +39,12 @@ Set as default shell
 chsh -s $(which fish)
 ```
 
+Set Fish Prompt
+```bas
+fish_config
+```
+then > Prompt tab > Simple
+
 ## Terminal Settings
 
 1. Set **Default Shell** to Ubuntu in your terminal settings.
