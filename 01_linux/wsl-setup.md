@@ -52,12 +52,6 @@ sudo apt upgrade -y
 sudo apt autoremove -y
 ```
 
-Check Ubuntu version:
-
-```bash
-cat /etc/os-release
-```
-
 ---
 
 ## 4. Terminal Settings (Optional but Recommended)
