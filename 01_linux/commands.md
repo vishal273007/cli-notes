@@ -2,6 +2,7 @@
 
 ```bash
 # File/Directory Information
+unzip file.zip # unzip the file in current folder
 du -lh file.txt      # file size - l for long listing/foramt and h for human readable
 du -sh java(folder_name)       # folder size --- s for summary
 ls -l file.txt      # file properties
