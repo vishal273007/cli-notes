@@ -119,23 +119,3 @@ set -x BROWSER "/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
 function sshnord4
     sshpass -p 'ssh@nord4' ssh -p 8022 u0_a363@192.168.0.142
 end
-
-# =========================================================================
-
-# shortcut for running adv java programs with 'run' from '../lib/run.sh'
-# in the dir /home/vishal/AdvJava/lib/(run.sh and ojdbc8.jar)
-# function run
-    # ../lib/run.sh $argv
-# end
-
-# run.sh file content in AdvJava/lib/ folder
-# ```bash
-# #!/bin/bash
-# SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-# SRC_DIR="$SCRIPT_DIR/../src"
-# BIN_DIR="$SCRIPT_DIR/../bin"
-
-# javac -d "$BIN_DIR" "$SRC_DIR/$1" && java -cp "$BIN_DIR:$SCRIPT_DIR/ojdbc8.jar" "$(basename "$1" .java)"
-# ```
-```
