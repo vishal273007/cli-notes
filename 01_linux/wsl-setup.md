@@ -17,6 +17,7 @@ wsl --list --verbose
 
 1. Without restarting, Open **Ubuntu** from the Start Menu.
 2. Set **username** (e.g., `vishal`) and **password** (e.g., `ubuntu`).
+3. Run `touch .hushlogin` to hide home screen message.
 
 Inside Ubuntu, update and clean packages:
 
