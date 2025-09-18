@@ -82,6 +82,19 @@ Replace `vishal` with `ubuntu`.
 ## Uninstall WSL Ubuntu
 
 Open **PowerShell** as Administrator.
-1. `wsl --list`
-2. `wsl --shutdown` > `wsl --unregister Ubuntu`
-3. Must remove autostartup script from the startup menu.
+1. Check if Linux is Installed
+```bash
+wsl --list --verbose
+```
+
+2. Close Ubuntu
+```bash
+wsl --shutdown
+```
+
+3. Remove
+```bash
+wsl --unregister Ubuntu
+```
+
+4. Must remove autostartup script from the startup menu.
