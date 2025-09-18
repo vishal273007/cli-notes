@@ -44,8 +44,7 @@ wsl.exe
 
 ---
 
-tripple `-`: means thick <hr> line like above this.
-
+tripple `dash`: means thick <hr> line like above this.
 
 ## Uninstall WSL Ubuntu
 
