@@ -68,7 +68,7 @@
 - Font face: FiraCode Nerd Font
 - Font-size/Font-weight: 11 / Medium
 
-- Transparency- Background Opacity: 90%, Enable acrylic material
+- Transparency- Background Opacity: 80%, Enable acrylic material
 - Padding: 12
 
 - Delete a profile: Settings --> Profile --> Scroll --> Delete profile.
