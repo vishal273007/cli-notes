@@ -2,7 +2,7 @@
 
 
 
-## 1. Remove WSL Ubuntu
+## Remove WSL Ubuntu
 
 Open **PowerShell** as Administrator.
 1. `wsl --list`
@@ -15,7 +15,7 @@ Open **PowerShell** as Administrator.
 
 ---
 
-## 1. Enable WSL
+## Enable/Install WSL
 
 1. Open **PowerShell** as Administrator.
 2. Run the command:
@@ -25,24 +25,16 @@ Open **PowerShell** as Administrator.
 wsl --install
 
 # Check after installation
-wsl --list
+wsl --list --verbose
 ```
 
-## 2. Launch Ubuntu
+## Launch Ubuntu
 
 1. Without restarting, Open **Ubuntu** from the Start Menu.
 2. Wait 2 minutes for the installation to complete.
 3. Create a **username** (e.g., `ubuntu`) and **password** (e.g., `ubuntu`).
 
 ---
-
-## 3. Verification
-
-Check installed WSL distributions and status:
-
-```powershell
-wsl --list --verbose
-```
 
 Inside Ubuntu, update and clean packages:
 
