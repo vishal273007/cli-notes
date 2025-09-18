@@ -42,7 +42,7 @@ wsl.exe
 ```
 * **Customize appearance:** Cursor shape: Bar
 
----
+* `Save` after changes in Terminal.
 
 ---
 
