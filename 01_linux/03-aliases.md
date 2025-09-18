@@ -53,9 +53,6 @@ if status is-interactive
     # Commands specific to interactive sessions can go here.
 end
 
-# Reload the Fish shell configuration.
-alias sf 'source ~/.config/fish/config.fish'
-
 # Bind tab key to accept-autosuggestion
 bind \t accept-autosuggestion
 
