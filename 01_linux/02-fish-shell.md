@@ -3,14 +3,11 @@
 ## Installation
 
 ```bash
-# Add repository
-sudo apt-add-repository ppa:fish-shell/release-3
-sudo apt update
-
-# Install fish
 sudo apt install fish -y
+```
 
-# Set as default shell
+Set as default shell
+```bash
 chsh -s $(which fish)
 ```
 
