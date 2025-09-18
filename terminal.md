@@ -68,6 +68,7 @@
 - Font face: FiraCode Nerd Font
 - Font-size/Font-weight: 11 / Medium
 
+- Cursor shape - bar: Set in default and Ubuntu both tab
 - Transparency- Background Opacity: 80%, Enable acrylic material
 - Padding: 12
 
