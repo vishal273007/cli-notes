@@ -4,6 +4,8 @@
 
 - `touch .hushlogin` - Hide home screen message
 
+- `sudo apt update -y` > `sudo apt upgrade -y` > `sudo apt autoremove -y`
+
 ### Change ubuntu hostname(computer name)
 
 ```bash
