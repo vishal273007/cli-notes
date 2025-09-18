@@ -46,6 +46,12 @@ sudo apt autoremove -y
 2. To open Ubuntu in the current folder:
 
 * **Settings → Profiles → Ubuntu**
-* **Command line:** `wsl.exe` (Opens in current folder)
-* **Starting directory:** `\\wsl$\Ubuntu\home\ubuntu` (default path)
+* **Command line:**
+```bash
+`wsl.exe`   # Opens in current folder
+```
+* **Starting directory:**
+```bash
+\\wsl$\Ubuntu\home\ubuntu   # default path
+```
 * **Customize appearance:** Cursor shape: Bar
