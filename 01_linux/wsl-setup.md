@@ -27,7 +27,7 @@ sudo apt upgrade -y
 sudo apt autoremove -y
 ```
 
-## 4. Terminal Settings
+## Terminal Settings
 
 1. Set **Default Shell** to Ubuntu in your terminal settings.
 2. To open Ubuntu in the current folder:
