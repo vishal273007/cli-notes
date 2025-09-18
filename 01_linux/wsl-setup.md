@@ -25,8 +25,7 @@ wsl --list --verbose
 ## Launch Ubuntu
 
 1. Without restarting, Open **Ubuntu** from the Start Menu.
-2. Wait 2 minutes for the installation to complete.
-3. Create a **username** (e.g., `ubuntu`) and **password** (e.g., `ubuntu`).
+2. Set **username** (e.g., `vishal`) and **password** (e.g., `ubuntu`).
 
 ---
 
