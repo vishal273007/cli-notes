@@ -6,10 +6,10 @@
 2. Run the command:
 
 ```powershell
-# Install Ubuntu
 wsl --install
-
-# Check after installation
+```
+Then check if installed.
+```powershell
 wsl --list --verbose
 ```
 
