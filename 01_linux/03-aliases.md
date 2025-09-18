@@ -53,18 +53,18 @@ if status is-interactive
     # Commands specific to interactive sessions can go here.
 end
 
+# Source additional aliases from an external file.
+source ~/.config/fish/aliases.fish
+
+# Reload the Fish shell configuration.
+alias sf 'source ~/.config/fish/config.fish'
+
 # Bind tab key to accept-autosuggestion
 bind \t accept-autosuggestion
 
 # =========================================================================
 # Fish Greeting
 set -g fish_greeting ""
-
-# Source additional aliases from an external file.
-source ~/.config/fish/aliases.fish
-
-# Reload the Fish shell configuration.
-alias sf 'source ~/.config/fish/config.fish'
 
 # =========================================================================
 # Environment variables
