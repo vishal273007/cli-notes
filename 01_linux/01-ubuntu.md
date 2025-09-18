@@ -2,7 +2,7 @@
 
 ## Basic To-Dos
 
-- `touch ~/.hushlogin` - Hide home screen message
+- `touch .hushlogin` - Hide home screen message
 
 ## Essential Packages
 
