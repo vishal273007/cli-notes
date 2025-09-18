@@ -27,6 +27,18 @@ sudo apt upgrade -y
 sudo apt autoremove -y
 ```
 
+## Fish Shell
+
+Install
+```bash
+sudo apt install fish -y
+```
+
+Set as default shell
+```bash
+chsh -s $(which fish)
+```
+
 ## Terminal Settings
 
 1. Set **Default Shell** to Ubuntu in your terminal settings.
