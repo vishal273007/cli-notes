@@ -48,7 +48,7 @@ sudo apt autoremove -y
 * **Settings → Profiles → Ubuntu**
 * **Command line:**  Opens in current folder
 ```bash
-`wsl.exe`
+wsl.exe
 ```
 * **Starting directory:** default path
 ```bash
