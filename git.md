@@ -49,8 +49,8 @@ git config --global user.email "myemailgmail.com" # Sets email for commits.
 git config --list # verify details.
 
 # For the first time push, enter following:
-git config --global credential.helper store` - firt time only to store git credentials
-- Clone and then edit and push > Enter credentials once when pushing/pulling (after this, Git will remember them)
+git config --global credential.helper store # run firt time only to store git credentials this above command.
+Clone and then edit and push > Enter credentials once when pushing/pulling (after this, Git will remember them)
 
 # Now, when asked, enter the details like following:
 
@@ -110,3 +110,4 @@ If there's a mistake, here's how to fix:
 - `git restore <file>`: Discard changes in the working directory.
 - `git reset <file>`: Removes a file from staging the staging area but keeps the changes locally.
 - `git revert <commit-hash>`: Creates a new commit that undoes changes from a specific commit(safer than reset).
+
