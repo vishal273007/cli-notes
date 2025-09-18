@@ -49,7 +49,7 @@ git config --global user.email "myemailgmail.com" # Sets email for commits.
 git config --list # verify details.
 
 # For the first time push, enter following:
-git config --global credential.helper store # to store git credentials first time.
+git config --global credential.helper store # to store git credentials for the first time.
 Clone and then edit and push > Enter credentials once when pushing/pulling (after this, Git will remember them)
 
 # Now, when asked, enter the details like following:
