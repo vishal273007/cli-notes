@@ -1,17 +1,11 @@
 # Ubuntu WSL
 
-
-
-## Remove WSL Ubuntu
+### Remove WSL Ubuntu
 
 Open **PowerShell** as Administrator.
 1. `wsl --list`
 2. `wsl --shutdown` > `wsl --unregister Ubuntu`
 3. Must remove autostartup script from the startup menu.
-
-
-
-
 
 ---
 
@@ -46,7 +40,7 @@ sudo apt autoremove -y
 
 ---
 
-## 4. Terminal Settings (Optional but Recommended)
+## 4. Terminal Settings
 
 1. Set **Default Shell** to Ubuntu in your terminal settings.
 2. To open Ubuntu in the current folder:
@@ -54,7 +48,4 @@ sudo apt autoremove -y
 * **Settings → Profiles → Ubuntu**
 * **Command line:** `wsl.exe` (Opens in current folder)
 * **Starting directory:** `\\wsl$\Ubuntu\home\ubuntu` (default path)
-
-3. Customize appearance:
-
-* **Cursor shape:** Bar
+* **Customize appearance:** Cursor shape: Bar
