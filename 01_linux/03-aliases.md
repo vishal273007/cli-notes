@@ -1,20 +1,14 @@
 # Aliases and config file
 
-Dir: `~/.config/fish/aliases.fish`
-
 ```bash
-# Add 'source ~/.config/fish/aliases.fish' to the main config.fish file for external aliases file.
-source ~/.config/fish/aliases.fish
-
 # File and Directory Navigation
 alias c='clear'                   # Clear the terminal screen.
-alias cl='clear'                  # Another clear alias.
 alias cls='clear'                 # Clear alias for Windows.
 
 alias fish="cd ~/.config/fish/"   # Navigate to the Fish shell configuration folder.
 alias downloads="cd /mnt/d/Downloads"  # Navigate to Windows Downloads folder.
-alias desktop="cd /mnt/c/Users/Vishal\ Vishwakarma/Desktop"  # Navigate to Windows Desktop folder.
-alias users="cd /mnt/c/Users/Vishal\ Vishwakarma"  # Navigate to Vishal Vishwakarma's home directory in Windows.
+alias desktop="cd /mnt/c/Users/Vishal\ Vishwakarma/Desktop"  # Windows Desktop folder.
+alias users="cd /mnt/c/Users/Vishal\ Vishwakarma"  # Vishal Vishwakarma's directory in Windows.
 
 # Git Aliases
 alias gs="git status"             # Check the status of the Git repository.
@@ -23,10 +17,6 @@ alias gl="git log --oneline --graph --decorate"  # Show a concise and visual Git
 
 # Tmux
 alias tmux="~/.tmux-start.sh"     # Start tmux using a custom script.
-
-# SSH to Windows
-alias sshwindows="~/.ssh_login_windows.fish"   # SSH login to Windows.
-alias sqlplus="~/.sqlplus_remote_login.fish"   # SQLPlus remote login alias.
 
 # bat (cat) and eza/exa (ls - Enhanced File Listings with icons)
 alias cat='batcat'                 # Use bat as a replacement for cat.
@@ -55,7 +45,7 @@ alias update='sudo apt update && sudo apt upgrade -y'  # Update and upgrade syst
 
 ## Fish Configuration File
 
-Add to `~/.config/fish/config.fish`:
+Edit to `~/.config/fish/config.fish`:
 
 ```bash
 # Check if the shell session is interactive
@@ -77,19 +67,10 @@ source ~/.config/fish/aliases.fish
 alias sf 'source ~/.config/fish/config.fish'
 
 # =========================================================================
-# Oh My Posh Initialization
-# Initialize Oh My Posh with the specified theme configuration.
-oh-my-posh init fish --config ~/agnoster.omp.json | source
-
-# Alternative initialization for Oh My Posh with a cached theme configuration.
-eval "$(~/.local/bin/oh-my-posh init fish --config ~/.cache/oh-my-posh/themes/agnoster.omp.json)"
-
-# =========================================================================
 # Environment variables
 # Environment variable in fish "set -x PATH $PATH:/mnt..." (set -x VAR value) (export VAR=value - in bash/zsh).
 # -x flag for child processes, and -gx flag for increase scope to global.
 
-set -gx PATH $PATH /snap/bin # environment variable for neovim
 set -x PATH $PATH:/mnt/c/Windows/System32 # env for ipconfig.exe | grep IPv4
 
 # for using Windows path adb from Linux:
