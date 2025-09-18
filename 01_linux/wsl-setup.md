@@ -64,9 +64,9 @@ generateHosts = false
 ```
 
 2. Edit /etc/hosts: `sudo nano /etc/hosts`
-Change `127.0.1.1       vishal. vishal` to
+- Change `127.0.1.1   vishal. vishal` to
 ```bash
-127.0.1.1       ubuntu. ubuntu
+127.0.1.1   ubuntu. ubuntu
 ```
 
 3. Edit /etc/hostname: `sudo nano /etc/hostname`
