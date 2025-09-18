@@ -48,7 +48,7 @@ wsl.exe
 
 ---
 
-## Remove WSL Ubuntu
+## Uninstall WSL Ubuntu
 
 Open **PowerShell** as Administrator.
 1. `wsl --list`
