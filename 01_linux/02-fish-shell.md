@@ -1,16 +1,3 @@
-# Fish Shell
-
-## Installation
-
-```bash
-sudo apt install fish -y
-```
-
-Set as default shell
-```bash
-chsh -s $(which fish)
-```
-
 ## Oh My Posh Setup
 
 ```bash
