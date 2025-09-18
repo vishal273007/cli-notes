@@ -47,9 +47,9 @@ wsl.exe
 
 ---
 
-# Change hostname - Replace the the file contents as in this guide.
+# Change hostname
 
-1. Edit /etc/wsl.conf: sudo nano /etc/wsl.conf
+1. Edit /etc/wsl.conf: `sudo nano /etc/wsl.conf`
 
 ```bash
 [boot]
@@ -63,14 +63,14 @@ hostname = ubuntu
 generateHosts = false
 ```
 
-2. Edit /etc/hosts: sudo nano /etc/hosts
-Change `127.0.1.1       vishal. vishal` to as below.
+2. Edit /etc/hosts: `sudo nano /etc/hosts`
+Change `127.0.1.1       vishal. vishal` to
 ```bash
 127.0.1.1       ubuntu. ubuntu
 ```
 
-3. Edit /etc/hostname: sudo nano /etc/hostname
-Replace `vishal` with `ubuntu`.
+3. Edit /etc/hostname: `sudo nano /etc/hostname`
+- Replace `vishal` with `ubuntu`.
 
 4. `wsl --shutdown` in Windows Terminal.
 
