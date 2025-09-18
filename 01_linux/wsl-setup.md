@@ -15,7 +15,7 @@ Open **PowerShell** as Administrator.
 
 ---
 
-## Enable/Install WSL
+## Install WSL Ubuntu
 
 1. Open **PowerShell** as Administrator.
 2. Run the command:
