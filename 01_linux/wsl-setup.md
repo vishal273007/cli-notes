@@ -29,7 +29,7 @@ sudo apt autoremove -y
 
 ## Fish Shell
 
-Install
+Install Fish shell
 ```bash
 sudo apt install fish -y
 ```
