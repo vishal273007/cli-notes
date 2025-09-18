@@ -18,8 +18,6 @@ wsl --list --verbose
 1. Without restarting, Open **Ubuntu** from the Start Menu.
 2. Set **username** (e.g., `vishal`) and **password** (e.g., `ubuntu`).
 
----
-
 Inside Ubuntu, update and clean packages:
 
 ```bash
@@ -27,8 +25,6 @@ sudo apt update -y
 sudo apt upgrade -y
 sudo apt autoremove -y
 ```
-
----
 
 ## 4. Terminal Settings
 
