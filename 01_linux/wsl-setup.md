@@ -44,6 +44,39 @@ wsl.exe
 
 ---
 
+---
+
+# Change hostname - Replace the the file contents as in this guide.
+
+1. Edit /etc/wsl.conf: sudo nano /etc/wsl.conf
+
+```bash
+[boot]
+systemd=true
+
+[user]
+default=vishal
+
+[network]
+hostname = ubuntu
+generateHosts = false
+```
+
+2. Edit /etc/hosts: sudo nano /etc/hosts
+Change `127.0.1.1       vishal. vishal` to as below.
+```bash
+127.0.1.1       ubuntu. ubuntu
+```
+
+3. Edit /etc/hostname: sudo nano /etc/hostname
+Replace `vishal` with `ubuntu`.
+
+4. `wsl --shutdown` in Windows Terminal.
+
+5. Terminal > change shell > delete previous ubuntu instance > set new ubuntu instance after reinstalling.
+
+---
+
 `---`: means thick hr line like above this.
 
 ## Uninstall WSL Ubuntu
