@@ -1,4 +1,19 @@
-# Ubuntu WSL Installation
+# Ubuntu WSL
+
+
+
+## 1. Remove WSL Ubuntu
+
+Open **PowerShell** as Administrator.
+1. wsl --list
+2. `wsl --shutdown` > `wsl --unregister Ubuntu`
+3. Must remove autostartup script from the startup menu.
+
+
+
+
+
+---
 
 ## 1. Enable WSL
 
@@ -6,19 +21,17 @@
 2. Run the command:
 
 ```powershell
+# Install Ubuntu
 wsl --install
+
+# Check after installation
+wsl --list
 ```
-
-3. Restart the PC when prompted.
-
-> **Note:** Ubuntu will be installed by default—no need to install from the Microsoft Store.
-
----
 
 ## 2. Launch Ubuntu
 
-1. Open **Ubuntu** from the Start Menu.
-2. Wait for the installation to complete.
+1. Without restarting, Open **Ubuntu** from the Start Menu.
+2. Wait 2 minutes for the installation to complete.
 3. Create a **username** (e.g., `ubuntu`) and **password** (e.g., `ubuntu`).
 
 ---
