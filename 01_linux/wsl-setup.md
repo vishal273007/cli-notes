@@ -36,9 +36,9 @@ sudo apt autoremove -y
 ```bash
 wsl.exe
 ```
-* **Starting directory:** default path
+* **Starting directory:** default path (change vishal as required username)
 ```bash
-\\wsl$\Ubuntu\home\ubuntu
+\\wsl$\Ubuntu\home\vishal
 ```
 * **Customize appearance:** Cursor shape: Bar
 
