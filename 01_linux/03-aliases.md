@@ -1,6 +1,8 @@
 # Aliases and config file
 
-```bash
+# Windows Alias
+alias powershell='pwsh.exe -WorkingDirectory "C:\Users\Vishal Vishwakarma"'
+
 # File and Directory Navigation
 alias c='clear'                   # Clear the terminal screen.
 alias cls='clear'                 # Clear alias for Windows.
