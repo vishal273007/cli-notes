@@ -17,7 +17,7 @@
  2. `sshd`: _Start_
  3. `ps aux | grep sshd`: _Verify_
  4. `config file` ==> add `sshd` to autostart.
- 5. For one time, test From client device: `ssh -p 8022 u0_a363@192.168.0.142` and pwd `ssh@pad6/ssh@nord4` - Connect with Hotspot or Wi-Fi.
+ 5. For one time, test From client device: `ssh -p 8022 u0_a363@192.168.0.142` and pwd `ssh@pass` - Connect with Hotspot or Wi-Fi.
  6. After testing, just type `sshpass -p 'ssh@nord4' ssh -p 8022 u0_a630@192.168.1.13` and connect. Fish will save it so just change details each time.
 
 - In client config file, add  line `alias sshpad6="~/.pad6_ssh_login.sh`. > `touch ~/.pad6_ssh_login.sh` > `chmod +x ~/.pad6_ssh_login.sh` >
