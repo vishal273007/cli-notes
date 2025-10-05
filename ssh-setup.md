@@ -91,19 +91,19 @@ nano config # Create config file
 # Paste the following
 # Phone
 Host phone
-    HostName phone/tailscale_ip(100.70.91.88)
+    HostName 100.70.91.88 (phone/tailscale_ip)
     Port 8022
     User vishal
 
 # Tablet
 Host tablet
-    HostName tablet/tailscale_ip(100.92.203.123)
+    HostName 100.92.203.123(Short domain/tailscale_ip)
     Port 8022
     User vishal
 
 # Ubuntu
 Host ubuntu
-    HostName vishal/tailscale_ip(100.125.28.13)
+    HostName 100.125.28.13(Short domain/tailscale_ip)
     Port 2222
     User vishal
 
