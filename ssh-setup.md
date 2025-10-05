@@ -155,15 +155,18 @@ ipconfig # in powershell
 pkg install -y openssh -y
 
 # Test via forwarded port
-ping 100.86.124.118/vishal/vishal.bombay-fort.ts.net <tailscale_ip> # ping tailscale ip to test connection
-ssh -p 2222 vishal@192.168.1.8 # (wsl_username@Windows_IP)
+ping 100.86.124.118/vishal<tailscale_ip> # ping tailscale ip to test connection
+
+ssh vishal@ubuntu # test with hostname:
+ssh vishal@100.125.28.13 # wihout mentioning port
+ssh -p 22 vishal@100.125.28.13 # mention port explicit
+
 
 # in Termux ssh config file, after tailscale setup
 Host ubuntu
-    HostName vishal
-    Port 2222
+    HostName 100.125.28.13(Short domain/tailscale_ip)
+    Port 22
     User vishal
-
 
 # Set permissioin
 chmod 600 config
