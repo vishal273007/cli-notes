@@ -205,5 +205,5 @@ ftp://100.70.91.88:9999/ # ftp://<tailscale_ip>phone:9999
 ```
 Tailscale domain to use in SSH address
 ```bash
-ssh -p 8082 u0_a625@100.70.91.88 # <domain/tailscale_ip>
+ssh '-p 8082 u0_a625@100.70.91.88'/'phone' # <tailscale_ip/domain>
 ```
