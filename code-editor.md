@@ -1,140 +1,155 @@
-# VS Code Settings
+# VS Code Settings and Tips
 
-`vscode.dev/(link)` - VS Code web editor. [`Source Control` > Enter message > Click on `Commit & Push`]
+## Basic Commands
 
-## Open VS Code in Linux/Windows
+### Open VS Code
+- `code .` - Open current directory in VS Code
+- `code filename.txt` - Open specific file in VS Code
+- `cursor .` - Open current directory in Cursor
+- `windsurf .` - Open current directory in Windsurf
 
-- `code .` - VS Code/Cursor in current directory by default. `cursor .` may ask to open current directory again in WSL file system.
-- `code filename.txt` - Open file with VS Code
+## Core Shortcuts
 
-### Tips
+### Navigation
+- `Ctrl + `` ` - Toggle terminal
+- `Ctrl + ,` - Open Settings
+- `Ctrl + P` - Quick open files
+- `Ctrl + Shift + P` - Command palette
 
-- Hold "Alt" key - multi-line cursor.
-- Ctrl + alt + up/down - multiple cursor.
-- Move cursor to a word with multiple occurrences > "ctrl + d" to make multiple cursor for that word.
-- editor: format on save : off - to disable auto formatting on save from settings.
-- Use down arrow for code collapse and expand to hide and show a code method block to make the code look absolutely shorter.
-- Alt + Shift + O = import java packages automatically in vs code ( like ctrl + shift + o in eclipse)
-- Right click on navigation > hide recommended extensions.
+### Editing
+- `Alt + ↑/↓` - Move line up/down
+- `Ctrl + D` - Select next occurrence
+- `Ctrl + Shift + D` - Duplicate line
+- `Alt + Z` - Toggle word wrap
+- `Ctrl + /` - Toggle line comment
 
-___
+### Multi-cursor
+- Hold `Alt` + Click - Add cursor
+- `Ctrl + Alt + ↑/↓` - Add cursor above/below
+- `Ctrl + Shift + L` - Select all occurrences
 
-### VS Code Frequently Used Shortcuts
+## Editor Configuration
 
-- `Ctrl + Backtick` --> Terminal.
-- `Ctrl + ,` --> Settings
-- `Alt + up/down arrow` --> Move a line up/down without cut and paste.
+### UI Settings
+- **Minimap**: View > Appearance > Minimap > Toggle
+- **Sticky Scroll**: 
+  - Search: `sticky scroll`
+  - Toggle `Editor > Sticky Scroll: Enabled`
+- **Hover Behavior**:
+  - Search: `hover sticky`
+  - Toggle `Editor > Hover: Sticky`
 
-- `Ctrl + Shift + D` --> Copy same line below
-- `Alt + Z` --> Enable/Disable Word Wrap "OR" Search "word wrap" in settings and enable.
-- `Ctrl + Shift + V` --> Preview Markdown Docs
+### Formatting
+- **Format on Save**: 
+  - Search: `format on save`
+  - Toggle `Editor: Format On Save`
+- **Word Wrap**:
+  - Search: `word wrap`
+  - Set to `on` or `wordWrapColumn`
 
-- `Format on save`: Search in settings
+## Workspace Settings
 
-- For troubleshooting any any issue due to extensions, just disable one by one and find the problematic extension to uninstall.
-- Snippet:
-
-    ```java
-        main = main() block
-        sys = print line statement
-    ```
-
-- Search `workspace trust` -> `Security>Workspace>Trust:Enabled (Applies to all profiles)` - Uncheck to trust all folders.
-
-## Settings
-
-- `Minimap`: View > Appearance > Minimap > uncheck.
-- Settings > search `sticky` > `Editor > Hover: Sticky` (Hide popup on hover when moving mouse).
-- Settings > search `sticky` > `Editor > Sticky Scroll: Enabled` > Uncheck to make the top heading disable sticky scroll.
-
-- `code runner - run in terminal` > uncheck to show output in Output tab.
-- Enable `format on save` by searching and enabling it in settings.
-- Search
-
-> Move to "secondary sidebar" to enable `Codeium` to open with button beside minimize button, just like where copilot opens.
-
-## JSON Settings
-
-```json
-"editor.suggest.overline": false, // suggestions below cursor.
-
-// Editor and Terminal Font for font ligature(enable from settings) support
-"terminal.integrated.fontFamily": "FiraCode Nerd Font Medium", // must use medium for terminal
-"terminal.integrated.fontWeight": "normal",
-"terminal.integrated.fontWeightBold": "normal" // consistent font weight for all text
-"editor.matchBrackets": "never" // hide the boxes that are shown when selecting one parenthesis.
-    
+### File Organization
 ```
-<!---------------------------------------------------------------------------------------------------------------->
+project/
+├── 01_HTML/
+│   └── 01_Basics/
+│       ├── 01_first.html
+│       └── 02_anchor.html
+└── .vscode/
+    └── settings.json
+```
 
-- Resize suggestions popup by holding popup edge to 3 lines small.
+### Excluding Files
+Add to `settings.json`:
+```json
+{
+    "files.exclude": {
+        "**/.vscode": true,
+        "**/gitignore": true,
+        "**/*.class": true
+    },
+    "explorer.compactFolders": false
+}
+```
 
-- Search `code-runner` and check `clear previous output` for clean output.
+### Git Integration
+1. Create `.gitignore` in root
+2. Add:
+   ```
+   .vscode/
+   *.class
+   ```
 
-### Files and Folders Organization
+## JSON Settings Reference
 
-- Organizing files and folders:
-
-- 01_HTML/
-    01_Basics/
-    |--- 01_first.html  
-    |--- 02_anchor.html
-
-___
-
-### Hide file/folder from file explorer
-
-- `"files.exclude` > Add Pattern > `**/.vscode, **/gitignore, **/*.class`
-
-### Folder expand only after clicking the arrow left to the folder
-
-- CTRL + , > search "compact folders" > disable.
-
-### Prevent unwanted folders from getting pushed
-
-- Create a `.gitignore` file in the root directory
-- Add `.vscode` to hide the .vscode folder from being pushed
+### settings.json
+```json
+{
+    // Font settings
+    "editor.fontFamily": "Consolas, 'Courier New', monospace",
+    "editor.fontSize": 14,
+    
+    // Terminal settings
+    "terminal.integrated.fontFamily": "FiraCode Nerd Font Medium",
+    "terminal.integrated.fontWeight": "normal",
+    "terminal.integrated.fontWeightBold": "normal",
+    
+    // Editor behavior
+    "editor.suggest.overline": false,
+    "editor.matchBrackets": "never",
+    "editor.wordWrap": "on",
+    
+    // Code Runner
+    "code-runner.clearPreviousOutput": true,
+    "code-runner.runInTerminal": false
+}
+```
 
 ## Live Server Setup
 
-### Installation & Usage
-
-1. Install **Node.js**
-   - Verify installation by running:
-
-     ```bash
-     node -v
-     npm -v
-     ```
-
-2. Install live-server globally:
-
+### Installation
+1. Install Node.js from [nodejs.org](https://nodejs.org/)
+2. Verify installation:
    ```bash
-   npm install -g live-server
+   node --version
+   npm --version
    ```
+3. Install Live Server extension in VS Code
 
-3. Start the server:
-   - Navigate to desired folder
-   - Run `live-server` in terminal
+### Usage
+- Right-click HTML file > "Open with Live Server"
+- Or use command palette: "Live Server: Open with Live Server"
 
-### Remote Device Access
+## Cursor Editor Features
 
-- Access via: `http://192.168.0.125:8080`
-- **Firewall Configuration:**
-  1. Open Firewall → Advanced settings
-  2. Navigate to Inbound Rules → Port
-  3. Allow connection on port 8080
-  4. Name the rule "Allow live-server"
+### Agent Modes
+1. **Ask Mode** - Get explanations about code
+2. **Edit Mode** - Make direct code changes
+3. **Agent Mode** - Full programming partner:
+   - Handles complex, multi-step tasks
+   - Combines Ask and Edit features
+   - Provides explanations with changes
+   - Suggests improvements
 
-### Prevent cursor to go to the start of the line
+### Tips
+- Use `@` to reference code
+- Highlight code before asking questions
+- Use natural language for requests
 
-- Search `editor.formatontype` - check it to disable auto formatting.
-- Search `editor.trimautowhitespace` - uncheck it to trim whitespaces.
+## Troubleshooting
 
-<!--------------------------------------------------------------------------------------------------------------------------->
+### Extension Issues
+1. Open Extensions view (`Ctrl+Shift+X`)
+2. Disable extensions one by one
+3. Restart editor after each change
+4. Identify problematic extension
 
-## Cursor
-
+### Workspace Trust
+To manage workspace trust:
+1. Search: `workspace trust`
+2. Navigate to: `Security > Workspace > Trust: Enabled`
+3. Adjust settings as needed
 - Install `cursor` (not `code .`) after installation.
 
 ## Cursor Shortcuts
@@ -252,55 +267,15 @@ ___
 - **`Ctrl + Shift + F`**: To format code automatically.
 - **`Ctrl + F11`**: Shortcut to run the code immediately.
 
-```quote
-Do not pray for an easy life. Pray for the strength to use the keyboard - Bruce Lee.
-Not all shortcut are needed but only mostly used 10 to 15 shortcuts
-```
 
-<!--------------------------------------------------------------------------------------------------------------------------->
+<!------------------------------------------------------------------------------------------------------>
 
 ```text
-Cursor Chat:
+Windsurf Chat:
 
-Ask(question) - Gives knowledge and does not change code directly. if you ask to add comment, it will give you code and you have to click apply to add comment.
-
-Edit(give command) - directly fix or change code without at once. When you ask to add comment, it directly adds the comment.
-
-Agent(give extended command) - Works as a smart programming partner that can handle complex tasks with multiple steps. It combines both Ask and Edit features - can explain things, make code changes, and continue conversation to improve code further. When you ask to add comment, it will explain what it's doing, add the comment, and might suggest related improvements.
+Chat (question) - Gives knowledge and does not change code directly.
+Code (give command) - directly edit the open code after clicking apply.
 ```
-
-## AdvJava in ubuntu solution
-
-- `1. Added jar file` - [issue - ClassNotFoundException: oracle.jdbc.OracleDriver].
-
-- `2. Set ClassPath` -> `.vscode/settings.json` in current advanced java project:
-
-```json
-   // "java.project.settings" for Ubuntu:
-   {
-     "java.project.sourcePaths": ["."],
-     "java.project.referencedLibraries": ["lib/ojdbc8.jar"],
-     "code-runner.executorMap": {
-       "java": "cd $dir && javac -cp .:../lib/ojdbc8.jar $fileName && java -cp .:../lib/ojdbc8.jar $fileNameWithoutExt"
-     }
-   }
-
-   // "java.project.settings" for Windows:
-   {
-  "java.project.sourcePaths": ["src"],
-  "java.project.outputPath": "bin",
-  "java.project.referencedLibraries": ["lib/**/*.jar"],
-  "code-runner.executorMap": {
-    "java": "cd $dir && javac -cp \"../lib/ojdbc8.jar\" $fileName && java -cp \"../lib/ojdbc8.jar;.\" $fileNameWithoutExt"
-  },
-  "code-runner.runInTerminal": true
-  }
-```
-
-- `3. Firewall` - port 1521 was blocked [issue - stuck for infinity] - verified.
-
-- `4. URL IP in program` - Changed from localhost - 172.25.16.1(even when no wifi)/192.168.0.125 - [issue - Network Adapter could not establish the connection]  - verified.
-
 
 ### VS Code Settings (settings.json)
 
