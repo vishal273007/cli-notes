@@ -147,6 +147,7 @@ ipconfig # in powershell
 pkg install -y openssh -y
 
 # Test via forwarded port
+ping 100.86.124.118/vishal/vishal.bombay-fort.ts.net <tailscale_ip> # ping tailscale ip to test connection
 ssh -p 2222 vishal@192.168.1.8 # (wsl_username@Windows_IP)
 
 # in Termux ssh config file, after tailscale setup
