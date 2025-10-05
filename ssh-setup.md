@@ -4,18 +4,15 @@
 ## SSH Server Setup on Windows
 
 - Install OpenSSH Server > setup using ChatGPT.
-
-- Test with SSH Client
-- Type `ssh "vishal vishwakarma@hostname/ip"` hostname works when router supports hostname resolution.
+- SSH Client -> Type `ssh "vishal vishwakarma@hostname/ip"` # hostname works when router supports hostname resolution.
 - Enter Microsoft password, not local.
 
 ## SSH Server setup in Termux
 
 ```bash
-
- passwd # Set 'ssh@pass' and keep the password same for all devices
- sshd # Start
- ps aux | grep sshd # Verify
+passwd # Set 'ssh@pass' and keep the password same for all devices
+sshd # Start
+ps aux | grep sshd # Verify
 
 # add in config.fish to autostart
 sshd
@@ -23,27 +20,13 @@ sshd
 # For first time, test From client device:
 ssh -p 8022 u0_a363@192.168.0.142 # password 'ssh@pass' - Connect with Hotspot or Wi-Fi.
 
-# After testing, just type 
-sshpass -p 'ssh@nord4' ssh -p 8022 u0_a630@192.168.1.13
+# After testing, connect with single command
+sshpass -p 'ssh@pass' ssh -p 8022 u0_a600@192.168.1.13
 
-whoami # username 
-ifconfig # IP address
-
+whoami # username [vishal/u0_a600]
+hostname # hostname [localhost/ubuntu]
+ifconfig # IP address [192.168.1.13]
 ```
-
-### SSH Client for Auto Login
-
-```bash
-sudo apt install sshpass -y && sshpass -V # for storing password and verify
-
-or 
-
-Use SSH keygen to for password login.
-    
-sf # source to apply the changes
-
-```
-
 
 ### sqlplus dynamic IP auto login with custom sql commands
 
@@ -64,25 +47,23 @@ end
 ssh-keygen -f ~/.ssh/known_hosts -R "[192.168.1.25]:8022"
 
 # Login with standard method to update the host key
-ssh -p 8022 u0_a630@192.168.1.13 # Then enter password. Use alias after if needed.
+ssh -p 8022 u0_a630@192.168.1.13 # Then enter password.
 ```
 
 ## Passwordless SSH Login
 
 ```bash
-# In Client Device
-
-# Generate SSH key pair
+# Generate SSH key pair in client device
 ssh-keygen -t rsa # Press enter to accept default setup.
 
-# Copy public key to remote host
-ssh-copy-id phone / u0_a630@192.168.1.10 # Then enter password.
+# Copy public key by running the following command in client device
+ssh-copy-id phone / u0_a630@<hostname/ip> # Then enter password.
 
 # Test
-ssh phone / u0_a630@192.168.1.10 # Should connect without password.
+ssh phone / u0_a630@<hostname/ip> # Should connect without password.
 ```
 
-## Short steps to connect with SSH
+## Config File Setup for quick connection
 
 ```bash
 cd .ssh # Go to .ssh directory
@@ -91,19 +72,19 @@ nano config # Create config file
 # Paste the following
 # Phone
 Host phone
-    HostName 100.70.91.88 (phone/tailscale_ip)
+    HostName 100.70.91.88 # <phone/tailscale_ip>
     Port 8022
     User vishal
 
 # Tablet
 Host tablet
-    HostName 100.92.203.123(Short domain/tailscale_ip)
+    HostName 100.92.203.123 # <Short domain/tailscale_ip>
     Port 8022
     User vishal
 
 # Ubuntu
 Host ubuntu
-    HostName 100.125.28.13(Short domain/tailscale_ip)
+    HostName 100.125.28.13 # <Short domain/tailscale_ip>
     Port 22
     User vishal
 
@@ -115,10 +96,8 @@ chmod 600 config
 # Test
 ssh phone
 
-# Here u0_a615 username is not needed, just any name like vishal or ubuntu works same.
-
-# Termux username changes on each re-install. You can again only change the username by re-installing only.
-
+# Here u0_a600 username is not needed, just any name like vishal or ubuntu works same.
+# Termux username changes on each re-install. You can again change the username by re-installing.
 ```
 
 ## Setup Open SSH Server in WSL Ubuntu
@@ -139,23 +118,26 @@ sudo service ssh status
 # Find WSL IP
 wsl hostname -I
 
-# Set up port forwarding (replace <WSL_IP> with output)
-netsh interface portproxy add v4tov4 listenport=2222 listenaddress=0.0.0.0 connectport=22 connectaddress=172.31.57.25(<WSL_IP>)
+# Set up port forwarding (replace <WSL_IP> with output) -- if using same port 22, ensure windows is not running ssh server
+netsh interface portproxy add v4tov4 listenport=22 listenaddress=0.0.0.0 connectport=22 connectaddress=172.19.25.11 <WSL_IP>
 
 # Allow port in firewall
-New-NetFirewallRule -DisplayName "WSL SSH Forward" -Direction Inbound -LocalPort 2222 -Protocol TCP -Action Allow
+New-NetFirewallRule -DisplayName "WSL SSH Forward" -Direction Inbound -LocalPort 22 -Protocol TCP -Action Allow
 
 # Find Windows IPv4 for Termux connection
-ip # in Ubuntu
+ifconfig # in Ubuntu
 ipconfig # in powershell
+
+# Test after forwarding wsl port to windows
+ssh vishal@windows-tailscale-ip
 ```
 ### From Termux
 ```bash
 # Termux: Install SSH client
-pkg install -y openssh -y
+pkg install openssh -y
 
 # Test via forwarded port
-ping 100.86.124.118/vishal<tailscale_ip> # ping tailscale ip to test connection
+ping 100.86.124.118/vishal<tailscale_ip> # ping tailscale ip to test if connection is working
 
 ssh vishal@ubuntu # test with hostname:
 ssh vishal@100.125.28.13 # wihout mentioning port
@@ -173,35 +155,35 @@ chmod 600 config
 
 # Test
 ssh ubuntu
-
 # or 
-
 # From powershell
 ssh vishal@localhost
 ```
 
 ## SSH via TailScale (Works over any network)
 
-- Sign into TailScale in both PC and Android.
+- Sign in with TailScale in both PC and Android.
 
 - Connect TailScale after installation in both PC and Android.
 
 - PC tailscale tray > account > Admin console > do changes if needed.
 
-- DNS tab: Tailnet DNS name - bombay-fort.ts.net (can be renamed)
+```bash
+# Set custom device name and disable key expiry
+
+# DNS tab: Tailnet DNS name - bombay-fort.ts.net (can be renamed)
+
+# Enable - allow on LAN in Android TailScale app.
+
+# Windows Domain names 
+vishal # Short Domain name
+vishal.bombay-fort.ts.net # Full Domain name
+
+# Android Domain names
+'phone' / 'tablet' # Full Domain name: phone.bombay-fort.ts.net
+```
 
 <br>
-
-```bash
-# Windows DNS address 
-vishal # Short DNS address
-vishal.bombay-fort.ts.net # Full DNS address
-
-# Android DNS address
-'phone' / 'tablet' # Full DNS address: phone.bombay-fort.ts.net
-
-# Enable - allow on LAN.
-```
 
 ### TailScale in WSL Ubuntu
 ```bash
