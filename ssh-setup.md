@@ -104,7 +104,7 @@ Host tablet
 # Ubuntu
 Host ubuntu
     HostName 100.125.28.13(Short domain/tailscale_ip)
-    Port 2222
+    Port 22
     User vishal
 
 # Here, in phone, due to other apps, domain can cause issue due to conflict with other apps. IP always works and free from the conflict and only changes after re-installing the tailscale. for IP, after re-installation, it is needed to update the ip in config inside .ssh folder.
