@@ -219,7 +219,7 @@ Windows notification tray > Account > Admin console...
 ftp://192.168.1.10:9999
 
 # Tailscale ftp same address over anywhere
-ftp://phone:9999
+ftp://<tailscale_ip>phone:9999
 ```
 
 - Tailscale domain to use in SSH adress
