@@ -107,3 +107,24 @@ alias l.="eza -d .* --icons"       # List hidden directories with icons.
 alias cat='batcat'              # Use bat as a replacement for cat
 ```
 
+
+## Termux Autostart on boot
+
+1. Install Termux:Boot from F-Droid.
+2. Open the Termux:Boot app once to enable it.
+3. Disable battery optimization for Termux and Termux:Boot.
+4. Run `mkdir -p ~/.termux/boot` in Termux.
+5. Create `~/.termux/boot/start-termux` with:
+   ```bash
+   #!/data/data/com.termux/files/usr/bin/sh
+   termux-wake-lock
+   sshd
+   pgrep -f "tcpsvd.*9999" >/dev/null || busybox tcpsvd -vE 0.0.0.0 9999 busybox ftpd -w /sdcard &   
+   ```
+6. Make it executable: `chmod +x ~/.termux/boot/start-termux`.
+7. Reboot. Termux will run in background with notification (may take ~60s after unlock).
+
+## Termux Battery consumption by constant autorun
+
+- Idle (background, no wakelock): Negligible drain, ~0-1% per hour.
+- FTP server (background with wakelock): 2-10% per hour, varies by device/activity.
