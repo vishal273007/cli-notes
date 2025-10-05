@@ -155,6 +155,12 @@ Host wsl
     Port 2222
     User vishal
 
+# In android .ssh folder
+Host wsl
+    HostName vishal
+    Port 2222
+    User vishal
+
 # Set permissioin
 chmod 600 config
 
@@ -185,7 +191,7 @@ vishal # Short DNS address
 vishal.bombay-fort.ts.net # Full DNS address
 
 # Android DNS address
-phone # Full DNS address: phone.bombay-fort.ts.net)
+'phone' / 'tablet' # Full DNS address: phone.bombay-fort.ts.net
 
 # Enable - allow on LAN.
 ```
