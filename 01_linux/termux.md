@@ -1,54 +1,32 @@
 # Termux
 
-**Open Solid Explorer and navigate to `/data/data/com.termux/files/home/` the copy the .termux folder to take termux backup.**
-**Similarly, copy .config folder to take fish shell backup. Save backup folders in OneDrive to access from any device**
-
-**Navigate to termux root data folders and allow write permission to copied backup files from attributes in solid explorer.**
-
-### Keep Termux Running in Background
-- About App > Battery > Enable Run in Background.
-- Recent > Lock in Recent.
-
 ## Basic to-dos
 
 ```bash
 termux-change-repo > asia
 termux-setup-storage
-pkg update -y   and   pkg upgrade -y
+pkg update -y && pkg upgrade -y
 
-# Install all packages first
-chsh -s fish # fish as default shell 
-
-cd /  # root storage 
-cd /sdcard/  # main storage
+pkg install fish -y && chsh -s fish # install and set fish as default shell 
+# `fish_config` -> prompt tab -> Informative Vcs (~ [1]$)
 ```
-
 ___
 
 ### Packages
 
 ```bash
-pkg install python git nodejs openssh busybox curl wget openjdk-17 which fish eza bat tree -y # alias cat = bat
+# Install all packages first
+pkg install python git nodejs openssh busybox curl wget which eza bat tree -y
 
-which busybox fish # verify installation with path
+which busybox # verify installation with path
 
-Use 3C Toolbox Task Manager to see how much sshd and busybox ftp with Termux is consuming CPU.
-```
-
-
-```bash
-- termux-reload-settings # load the changes
-- vol-up + k # hide/unhide termux bottom toolbar.
-- termux-open file.txt / file.img # open files with termux
-- termux-wake-lock/unlock # keep running/close after lock screen 
+Use 3C Toolbox Task Manager to see how much CPU sshd and busybox ftp is consuming in/with Termux.
 ```
 
 ### Termux margin settings
 
-- Just copy the backup folder of .termux to restore the settings.
-
 ```bash
-nano ~/.termux/termux.properties
+# nano ~/.termux/termux.properties
 terminal-margin-horizontal=20
 terminal-margin-vertical=10
 ```
@@ -56,14 +34,14 @@ terminal-margin-vertical=10
 ### Font change
 
 ```bash
-mkdir NerdFont > cd NerdFont > wget font_link > ls > unzip FiraCode.zip > rename mv font.ttf ~/.termux
+mkdir NerdFont > cd NerdFont > wget font_link > ls > unzip FiraCode.zip > mv font.ttf ~/.termux
 ```
 
 ### Termux Dracula Theme
 
->touch colors.properties
-
 ```bash
+# nano ~/.termux/colors.properties
+# paste the following
 background=#282A36
 foreground=#F8F8F2
 cursor=#F8F8F2
@@ -87,7 +65,7 @@ color14=#A4FFFF
 color15=#FFFFFF
 ```
 
-## Fish Config for Alias and Environment Variables
+## config.fish file
 
 ```bash
 if status is-interactive
@@ -100,7 +78,6 @@ sshd
 pgrep -f "tcpsvd.*9999" >/dev/null || busybox tcpsvd -vE 0.0.0.0 9999 busybox ftpd -w /sdcard &  # & - run in background (for any foreground tasks)
 
 alias c='clear'
-alias cl='clear'
 alias cls='clear'
 
 bind \t accept-autosuggestion
@@ -127,8 +104,4 @@ alias l.="eza -d .* --icons"       # List hidden directories with icons.
 
 # bat (cat) and eza/exa (ls - Enhanced File Listings with icons)
 alias cat='batcat'              # Use bat as a replacement for cat
-
 ```
-
-## Fish Prompt
-- `fish_config`: prompt tab > Informative Vcs (~ [1]$)
