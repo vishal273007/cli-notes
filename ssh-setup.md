@@ -91,15 +91,23 @@ nano config # Create config file
 # Paste the following
 # Phone
 Host phone
-    HostName phone
+    HostName phone/tailscale_ip(100.70.91.88)
     Port 8022
     User vishal
 
 # Tablet
 Host tablet
-    HostName tablet
+    HostName tablet/tailscale_ip(100.92.203.123)
     Port 8022
     User vishal
+
+# Ubuntu
+Host ubuntu
+    HostName vishal/tailscale_ip(100.125.28.13)
+    Port 2222
+    User vishal
+
+# Here, in phone, due to other apps, domain can cause issue due to conflict with other apps. IP always works and free from the conflict and only changes after re-installing the tailscale. for IP, after re-installation, it is needed to update the ip in config inside .ssh folder.
 
 # Set permissioin
 chmod 600 config
@@ -161,7 +169,7 @@ Host ubuntu
 chmod 600 config
 
 # Test
-ssh wsl
+ssh ubuntu
 
 # or 
 
