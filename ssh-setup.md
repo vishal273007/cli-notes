@@ -197,17 +197,13 @@ sudo tailscale up
 Windows notification tray > Account > Admin console...
 ```
 
-### Useful Usage of Tailscale
-- Use the tailscale domain to use the ftp with the fixed ip, even over internet.
+### Other Usage of Tailscale
+Tailscale IP address to use ftp with fixed ip, even over internet.
 ```bash
-# Example full standard ftp address
-ftp://192.168.1.10:9999
-
 # Tailscale ftp same address over anywhere
-ftp://<tailscale_ip>phone:9999
+ftp://100.70.91.88:9999/ # ftp://<tailscale_ip>phone:9999
 ```
-
-- Tailscale domain to use in SSH adress
+Tailscale domain to use in SSH address
 ```bash
-ssh -p 8082 u0_a600@<tailscale_ip/domain>
+ssh -p 8082 u0_a625@100.70.91.88 # <domain/tailscale_ip>
 ```
