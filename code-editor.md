@@ -300,3 +300,18 @@ Agent(give extended command) - Works as a smart programming partner that can han
 - `3. Firewall` - port 1521 was blocked [issue - stuck for infinity] - verified.
 
 - `4. URL IP in program` - Changed from localhost - 172.25.16.1(even when no wifi)/192.168.0.125 - [issue - Network Adapter could not establish the connection]  - verified.
+
+
+### VS Code Settings (settings.json)
+
+#### Word Selection Highlight
+Subtle, non-intrusive highlights for better code readability:
+
+```json
+"workbench.colorCustomizations": {
+  "terminal.background": "#00000000",
+  "editor.selectionHighlightBackground": "#6A995533",
+  "editor.selectionHighlightBorder": "#6A995555",
+  "editor.wordHighlightBackground": "#6A995522",
+  "editor.wordHighlightStrongBackground": "#6A995522"
+}
