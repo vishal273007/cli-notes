@@ -146,20 +146,15 @@ ipconfig # in powershell
 # Termux: Install SSH client
 pkg install -y openssh -y
 
-# Connect to WSL via forwarded port
-ssh -p 2222 vishal@172.16.0.44 # (username@Windows_IP)
+# Test via forwarded port
+ssh -p 2222 vishal@192.168.1.8 # (wsl_username@Windows_IP)
 
 # in Termux ssh config file, after tailscale setup
-Host wsl
+Host ubuntu
     HostName vishal
     Port 2222
     User vishal
 
-# In android .ssh folder
-Host wsl
-    HostName vishal
-    Port 2222
-    User vishal
 
 # Set permissioin
 chmod 600 config
