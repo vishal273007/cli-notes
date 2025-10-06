@@ -1,6 +1,9 @@
-# Aliases and config file
+# Fish config.fish and aliases
 
-# Windows Alias
+## Aliases
+
+```bash
+# Powershell
 alias powershell='pwsh.exe -WorkingDirectory "C:\Users\Vishal Vishwakarma"'
 
 # File and Directory Navigation
@@ -39,17 +42,14 @@ alias python="python3"  # Use Python 3 by default.
 # Network
 # alias ip='ipconfig.exe | grep "IPv4 Address" | grep "192.168."'  # Filtered IPv4 address for 192.168...
 alias ip="ipconfig.exe | awk '/IPv4 Address/ && !/169.254/ {print \$0} /Default Gateway/ && \$NF ~ /[0-9]/ {print \$0}'"
-
-# Other Custom Aliases
-alias update='sudo apt update && sudo apt upgrade -y'  # Update and upgrade system packages.
 ```
 <!-- ================================================================== -->
 
-## Fish Configuration File
-
-Edit to `~/.config/fish/config.fish`:
+## config.fish
 
 ```bash
+# Edit ~/.config/fish/config.fish:
+
 # Check if the shell session is interactive
 if status is-interactive
     # Commands specific to interactive sessions can go here.
@@ -73,15 +73,19 @@ set -g fish_greeting ""
 # Environment variable in fish "set -x PATH $PATH:/mnt..." (set -x VAR value) (export VAR=value - in bash/zsh).
 # -x flag for child processes, and -gx flag for increase scope to global.
 
-set -x PATH $PATH:/mnt/c/Windows/System32 # env for ipconfig.exe | grep IPv4
+# Windows Files added to PATH in fish - works for battery, ip, powershell over SSH
+if test -d /mnt/c/Windows/System32
+    set -gx PATH $PATH /mnt/c/Windows/System32 /mnt/c/Windows /mnt/c/ProgramData /mnt/c/Windows/System32/WindowsPowerShell/v1.0 /mnt/c/Program\ Files/PowerShell/7
+end
 
 # for using Windows path adb from Linux:
 set -x PATH $PATH /mnt/c/tools/platform-tools
 
-# fastboot alias for fastboot.exe
+# fastboot, adb is already in PATH
 alias fastboot="fastboot.exe"
 
 # =========================================================================
+
 # sqlplus function with custom commands in c:\tools\commands.sql and 'cl scr and set linesize 100'
 function sqlplus
     sshpass -p '12513365@Ms' ssh -t "vishal vishwakarma@vishal" "sqlplus system/tiger @C:\\tools\\commands.sql"
@@ -90,15 +94,12 @@ end
 # Keep ubuntu running in background
 nohup sleep infinity &>/dev/null &; disown
 
-# function to run java program as 'run <filename>.java'
-function run
-    javac $argv[1] && java (basename $argv[1] .java)
-end
-
 # Set windows host browser as wsl browser as as well for live server
 set -x BROWSER "/mnt/c/Program Files/Google/Chrome/Application/chrome.exe"
 
-# ssh for nord 4
-function sshnord4
-    sshpass -p 'ssh@nord4' ssh -p 8022 u0_a363@192.168.0.142
+
+# Battery Status
+function battery
+    powershell.exe -Command 'Get-WmiObject -Class Win32_Battery | ForEach-Object { "Battery: $($_.EstimatedChargeRemaining)% , Status: $($_.BatteryStatus)" }'
 end
+```
