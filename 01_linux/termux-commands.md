@@ -28,5 +28,11 @@ _Apps_
 
 ## Battery details
 ```bash
+# Function to get battery details
+function battery
+    su -c 'echo "Battery: $(cat /sys/class/power_supply/battery/capacity)% , Temp: $(($(cat /sys/class/power_supply/battery/temp)/10))°C"'
+end
+
+# OR in One line
 su -c 'echo "Battery: $(cat /sys/class/power_supply/battery/capacity)% , Temp: $(($(cat /sys/class/power_supply/battery/temp)/10))°C"'
 ```
