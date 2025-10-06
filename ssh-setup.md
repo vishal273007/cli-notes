@@ -181,6 +181,15 @@ vishal.bombay-fort.ts.net # Full Domain name
 
 # Android Domain names
 'phone' / 'tablet' # Full Domain name: phone.bombay-fort.ts.net
+
+# Troubleshooting
+domain cannot be resolved  --> AdGuard interfering with domain resolution
+
+# Solution: 
+Remove all apps that do not have ads from adguard filtering including tailscale, terminal, shell, Termux, and other networking apps.
+
+# Common issues
+Tailscale faces issue to resolve the domain on every restart or randomly but IP works fine.
 ```
 
 <br>
