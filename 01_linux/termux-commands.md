@@ -25,3 +25,8 @@ _Apps_
 - `su -c "pm clear com.whatsapp"` — Clear app data  
 - `su -c "pm disable-user com.whatsapp"` — Disable app  
 - `su -c "pm enable com.whatsapp"` — Enable app  
+
+## Battery details
+```bash
+su -c 'echo "Battery: $(cat /sys/class/power_supply/battery/capacity)% , Temp: $(($(cat /sys/class/power_supply/battery/temp)/10))°C"'
+```
