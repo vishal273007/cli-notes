@@ -195,6 +195,9 @@ Tailscale faces issue to resolve the domain on every restart or randomly but IP 
 <br>
 
 ### TailScale in WSL Ubuntu
+
+_Note: Tailscale IPs doesn't work if any VPN or networking app is active._
+
 ```bash
 # Install TailScale
 curl -fsSL https://tailscale.com/install.sh | sh
