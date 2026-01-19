@@ -2,7 +2,6 @@
 
 > Try multiple resources (ChatGPT, Claude, Google) when solving a problem.
 > Read official docs(documentation) and use keyboard-only in Linux.
-> Codeium: Ctrl + I (to open and ask queries)
 
 ## Windows Terminal Theme
 
@@ -86,6 +85,14 @@
 
 - **`F11`**: Full screen
 
+### Set tab key to accept auto-suggestions in Powershell
+
+1. Open powershell -> Type 'notepad $PROFILE' to edit or create the file
+2. Add this line
+```bash
+Set-PSReadLineKeyHandler -Key Tab -Function AcceptSuggestionexit
+```
+
 ### Update windows apps with `winget`
 
 winget is package manager for windows. It is similar to `apt` in linux. Package manager is powerful way to manage windows apps. Install apps with `winget install` and update with `winget upgrade`. It is recommended to use because faster way to install apps than download and install manually.
@@ -97,5 +104,6 @@ winget upgrade --all (similar to `apt upgrade -y`)
 _Reset Terminal:_
 
 - `Installed apps` > Search `terminal` > `Advance options` > `Reset`.
+
 
 
