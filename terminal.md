@@ -87,7 +87,7 @@
 
 ### Set tab key to accept auto-suggestions in Powershell
 
-1. Open powershell -> Type 'notepad $PROFILE' to edit or create the file
+1. Open Powershell and type 'notepad $PROFILE' to edit or create the file
 2. Add this line
 ```bash
 Set-PSReadLineKeyHandler -Key Tab -Function AcceptSuggestionexit
@@ -104,6 +104,7 @@ winget upgrade --all (similar to `apt upgrade -y`)
 _Reset Terminal:_
 
 - `Installed apps` > Search `terminal` > `Advance options` > `Reset`.
+
 
 
 
