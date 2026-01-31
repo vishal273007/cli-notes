@@ -63,28 +63,29 @@ ssh-copy-id phone / u0_a630@<hostname/ip> # Then enter password.
 ssh phone / u0_a630@<hostname/ip> # Should connect without password.
 ```
 
-## Config File Setup for quick connection
+## Setup for quick SSH connection
 
 ```bash
+# In Client device
 cd .ssh # Go to .ssh directory
 nano config # Create config file
 
 # Paste the following
 # Phone
 Host phone
-    HostName 100.70.91.88 # <phone/tailscale_ip>
+    HostName 100.100.200.200 # <custom tailscale_ip/phone_ip>
     Port 8022
     User vishal
 
 # Tablet
 Host tablet
-    HostName 100.92.203.123 # <Short domain/tailscale_ip>
+    HostName 100.100.200.201
     Port 8022
     User vishal
 
 # Ubuntu
 Host ubuntu
-    HostName 100.125.28.13 # <Short domain/tailscale_ip>
+    HostName 100.100.200.100
     Port 22
     User vishal
 
