@@ -28,12 +28,12 @@ Use 3C Toolbox Task Manager to see how much CPU sshd and busybox ftp is consumin
 ### Clean Space
 
 ```bash
-# Check what is consuming the space in termux
-du -h -d 1 ../usr | sort -hr | head -n 5
-du -h -d 1 ~ | sort -hr | head -n 5 # Home folder
-
 # Verify size before and after cleaning
 du -h -d 0 ../usr/
+
+#Check what is consuming the space in termux
+du -h -d 1 ../usr | sort -hr | head -n 5
+du -h -d 1 ~ | sort -hr | head -n 5 # Home folder
 
 # Remove heavy compiler tools
 apt remove clang llvm lld libcompiler-rt ndk-sysroot ..... -y
@@ -150,4 +150,5 @@ alias cat='batcat'              # Use bat as a replacement for cat
 - Idle (background, no wakelock): Negligible drain, ~0-1% per hour.
 
 - FTP server (background with wakelock): 2-10% per hour, varies by device/activity.
+
 
