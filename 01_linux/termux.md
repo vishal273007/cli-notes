@@ -16,10 +16,11 @@ ___
 
 ```bash
 # Install all packages first
-pkg install python git nodejs openssh busybox curl wget which eza bat tree -y
+pkg install python git nodejs openssh busybox curl wget which eza bat tree ncdu -y
 
 which busybox # verify installation with path
 
+# type 'ncdu' -- see what is consuming the space in termux
 Use 3C Toolbox Task Manager to see how much CPU sshd and busybox ftp is consuming in/with Termux.
 ```
 
@@ -127,4 +128,5 @@ alias cat='batcat'              # Use bat as a replacement for cat
 ## Termux Battery consumption by constant autorun
 
 - Idle (background, no wakelock): Negligible drain, ~0-1% per hour.
+
 - FTP server (background with wakelock): 2-10% per hour, varies by device/activity.
