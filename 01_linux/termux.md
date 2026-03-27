@@ -34,7 +34,7 @@ pkg install -y sudo
 pkg install -y nethogs
 
 # Usage
-sudo nethogs (Note: press 'm' to cycle to MB/s if needed)
+sudo nethogs # (Note: press 'm' to cycle to MB/s if needed)
 ```
 
 ### Clean Space
