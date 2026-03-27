@@ -24,6 +24,18 @@ which busybox
 Use 3C Toolbox Task Manager to see how much CPU sshd and busybox ftp is consuming in/with Termux.
 ```
 
+### Live test which app is consuming internet
+
+```bash
+# Install sudo
+pkg install -y sudo
+
+# Install nethogs
+pkg install -y nethogs
+
+# Usage
+sudo nethogs (Note: press 'm' to cycle to MB/s if needed)
+```
 
 ### Clean Space
 
