@@ -105,9 +105,9 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-termux-wake-lock # run command while screen off
+# termux-wake-lock # run command while screen off
 
-sshd
+# sshd # Enable when not using MagiskSSH
 # Busybox ftp - Just install busybox and add this line in config file - Done!
 pgrep -f "tcpsvd.*9999" >/dev/null || busybox tcpsvd -vE 0.0.0.0 9999 busybox ftpd -w /sdcard &  # & - run in background (for any foreground tasks)
 
@@ -137,7 +137,7 @@ alias lt="eza --tree --icons"      # Display files in a tree structure with icon
 alias l.="eza -d .* --icons"       # List hidden directories with icons.
 
 # bat (cat) and eza/exa (ls - Enhanced File Listings with icons)
-alias cat='batcat'              # Use bat as a replacement for cat
+# alias cat='batcat'              # Use bat as a replacement for cat
 ```
 
 
