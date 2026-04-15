@@ -73,9 +73,9 @@ nano config # Create config file
 # Paste the following
 # Phone
 Host phone
-    HostName 100.100.200.200 # <custom tailscale_ip/phone_ip>
-    Port 8022
-    User vishal
+    HostName 100.100.200.200 # tailscale IP
+    Port 22
+    User root
 
 # Tablet
 Host tablet
