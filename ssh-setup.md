@@ -79,13 +79,13 @@ Host phone
 
 # Tablet
 Host tablet
-    HostName 100.100.200.201
+    HostName 100.100.200.255
     Port 8022
     User vishal
 
 # Ubuntu
 Host ubuntu
-    HostName 100.100.200.100
+    HostName 100.100.200.250
     Port 22
     User vishal
 
