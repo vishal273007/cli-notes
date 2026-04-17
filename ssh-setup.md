@@ -45,10 +45,10 @@ ssh -p 8022 u0_a630@192.168.1.13 # Then enter password.
 ssh-keygen -t rsa # Press enter to accept default setup.
 
 # Copy the client public key to the SSH server
-ssh-copy-id phone / u0_a630@<hostname/ip> # Then enter password.
+ssh-copy-id whoami@<ip> # Then enter password.
 
 # Test
-ssh phone / u0_a630@<hostname/ip> # Should connect without password.
+ssh alias/whoami@<hostname/ip> # Should connect without password.
 ```
 
 ## Setup for quick SSH connection
