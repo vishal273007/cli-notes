@@ -44,8 +44,18 @@ ssh -p 8022 u0_a630@192.168.1.13 # Then enter password.
 # Generate SSH key pair in client device
 ssh-keygen -t rsa # Press enter to accept default setup.
 
-# Copy the client public key to the SSH server
-ssh-copy-id whoami@<ip> # Then enter password.
+# Copy the client public key to the SSH server (in .ssh/authorized_keys)
+ssh-copy-id whoami@<ip> # Then enter password. (directly)
+
+(#or
+# for Termux:
+cat /data/data/com.termux/files/home/.ssh/id_rsa.pub # Copy the key from "ssh-rsa AA..." to "...18= root@localhost"
+# In server device (e.g., Pad 6)
+cd /data/ssh/root/.ssh/ > vi authorized_keys > # press 'i' for edit mode
+paste the client public key and connect again.)
+
+
+
 
 # Test
 ssh alias/whoami@<hostname/ip> # Should connect without password.
@@ -69,7 +79,7 @@ Host phone
 Host tablet
     HostName 100.100.200.255
     Port 8022
-    User vishal
+    User root
 
 # Ubuntu
 Host ubuntu
