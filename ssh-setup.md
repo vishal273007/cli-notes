@@ -28,18 +28,6 @@ hostname # hostname [localhost/ubuntu]
 ifconfig # IP address [192.168.1.13]
 ```
 
-### sqlplus dynamic IP auto login with custom sql commands
-
-```bash
-# sqlplus function with custom commands in c:\tools\commands.sql with 'cl scr and set linesize 100'
-function sqlplus
-    sshpass -p '12513365@Ms' ssh -t "vishal vishwakarma@vishal" "sqlplus system/tiger @C:\\tools\\commands.sql"
-    ---------------------------OR----------------------------
-    set HOST_IP (ipconfig.exe | grep -m 1 "IPv4 Address" | awk '{print $NF}' | tr -d '\r') # IP address containing 172.25.16.1
-    sshpass -p '12513365@Ms' ssh -t "vishal vishwakarma@$HOST_IP" "sqlplus system/tiger @C:\\tools\\commands.sql"
-end
-```
-
 ## REMOTE HOST IDENTIFICATION HAS CHANGED Solution
 
 ```bash
@@ -56,7 +44,7 @@ ssh -p 8022 u0_a630@192.168.1.13 # Then enter password.
 # Generate SSH key pair in client device
 ssh-keygen -t rsa # Press enter to accept default setup.
 
-# Copy public key by running the following command in client device
+# Copy the client public key to the SSH server
 ssh-copy-id phone / u0_a630@<hostname/ip> # Then enter password.
 
 # Test
