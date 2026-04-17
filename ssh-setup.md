@@ -45,17 +45,13 @@ ssh -p 8022 u0_a630@192.168.1.13 # Then enter password.
 ssh-keygen -t rsa # Press enter to accept default setup.
 
 # Copy the client public key to the SSH server (in .ssh/authorized_keys)
-ssh-copy-id whoami@<ip> # Then enter password. (directly)
+ssh-copy-id whoami@<ip> # Then enter password. (Automatic)
 
-(#or
-# for Termux:
+# For Termux: (Manual method) 
 cat /data/data/com.termux/files/home/.ssh/id_rsa.pub # Copy the key from "ssh-rsa AA..." to "...18= root@localhost"
 # In server device (e.g., Pad 6)
 cd /data/ssh/root/.ssh/ > vi authorized_keys > # press 'i' for edit mode
 paste the client public key and connect again.)
-
-
-
 
 # Test
 ssh alias/whoami@<hostname/ip> # Should connect without password.
